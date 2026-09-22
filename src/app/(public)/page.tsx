@@ -7,9 +7,11 @@ export const metadata: Metadata = {
   description: "A modern task management system. The all-in-one productivity tool designed to help you and your team stay on top of everything.",
 };
 
-export default function LandingPage() {
+export default  async function LandingPage() {
+
   return (
     <>
+    
       <HeroSection />
       <FeatureHighlights />
     </>
