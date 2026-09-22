@@ -17,6 +17,7 @@ This is a compact map for agents. The full requirements, learning sequence, and 
 - User `/task`: task list UI with menu actions.
 - Shared primitives: Button, Card, Dialog, DropdownMenu, Input, Label, Select, Textarea, etc.
 - API boundary: `src/lib/api.ts`.
+- Responsive baseline: all routes and components are mobile-first; the public navbar has a client-side hamburger menu below the `md` breakpoint.
 
 ## Known gaps from the guide
 
@@ -39,3 +40,7 @@ This is a compact map for agents. The full requirements, learning sequence, and 
 ## Agent rule
 
 Choose one vertical slice per task. Before editing, identify the controlling route/component and a cheap validation. Do not implement the next guide stage by scaffolding every missing route at once.
+
+## Permanent UI rule
+
+Design and implement mobile-first. Verify phone, tablet, and desktop widths for every UI change. Preserve responsive behavior as a first-class acceptance criterion, not a later polish task.

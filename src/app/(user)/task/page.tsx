@@ -30,7 +30,7 @@ export default async function TaskPage() {
   const taskData = await fetcher<TodoResponse>("todos?limit=10");
 
   return (
-    <div className="p-8 max-w-5xl mx-auto min-h-screen bg-background">
+    <div className="min-h-screen max-w-5xl bg-background px-4 py-6 sm:px-6 sm:py-8 lg:mx-auto lg:px-8">
       {/* Page Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
         <div>
@@ -53,11 +53,11 @@ export default async function TaskPage() {
               task.completed ? "bg-muted/30" : "bg-card"
             }`}
           >
-            <CardContent className="p-4 sm:p-5 flex items-center justify-between gap-4">
-              <div className="flex items-start sm:items-center gap-4 flex-1">
+            <CardContent className="flex items-start justify-between gap-3 p-3 sm:items-center sm:gap-4 sm:p-5">
+              <div className="flex min-w-0 flex-1 items-start gap-3 sm:items-center sm:gap-4">
                 
                 {/* Status Icon */}
-                <button className="mt-0.5 sm:mt-0 flex-shrink-0 text-muted-foreground hover:text-primary transition-colors">
+                <button aria-label={task.completed ? `Mark ${task.todo} incomplete` : `Mark ${task.todo} complete`} className="mt-0.5 flex-shrink-0 text-muted-foreground transition-colors hover:text-primary sm:mt-0">
                   {task.completed ? (
                     <CheckCircle2 className="h-6 w-6 text-primary" />
                   ) : (
@@ -66,8 +66,8 @@ export default async function TaskPage() {
                 </button>
 
                 {/* Task Content */}
-                <div className="flex flex-col gap-1.5">
-                  <span className={`text-base font-medium leading-snug ${
+                <div className="min-w-0 flex flex-col gap-1.5">
+                  <span className={`break-words text-sm font-medium leading-snug sm:text-base ${
                     task.completed ? "line-through text-muted-foreground" : "text-foreground"
                   }`}>
                     {task.todo}
@@ -96,7 +96,7 @@ export default async function TaskPage() {
               <DropdownMenu>
                 <DropdownMenuTrigger
                   render={
-                    <Button variant="ghost" size="icon" className="h-8 w-8 text-muted-foreground hover:text-foreground">
+                    <Button aria-label={`Actions for ${task.todo}`} variant="ghost" size="icon" className="h-8 w-8 shrink-0 text-muted-foreground hover:text-foreground">
                     <MoreHorizontal className="h-4 w-4" />
                     <span className="sr-only">Open menu</span>
                     </Button>

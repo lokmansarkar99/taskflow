@@ -25,17 +25,13 @@ export function HeroSection() {
             The all-in-one productivity tool designed to help you and your team stay on top of everything. Simple, fast, and beautifully designed.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 mt-4 w-full sm:w-auto">
-            <Link href="/register" className="w-full sm:w-auto">
-              <Button size="lg" className="rounded-full w-full sm:w-auto h-12 px-8 text-base shadow-sm">
-                Get Started <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
-            <Link href="/features" className="w-full sm:w-auto">
-              <Button variant="outline" size="lg" className="rounded-full w-full sm:w-auto h-12 px-8 text-base">
-                Learn More
-              </Button>
-            </Link>
+          <div className="mt-4 flex w-full flex-col gap-4 sm:w-auto sm:flex-row">
+            <Button size="lg" className="h-12 w-full rounded-full px-8 text-base shadow-sm sm:w-auto" render={<Link href="/register" />}>
+              Get Started <ArrowRight aria-hidden="true" className="ml-2 size-4" />
+            </Button>
+            <Button variant="outline" size="lg" className="h-12 w-full rounded-full px-8 text-base sm:w-auto" render={<Link href="/features" />}>
+              Learn More
+            </Button>
           </div>
         </div>
       </div>

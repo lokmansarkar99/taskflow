@@ -9,6 +9,8 @@ applyTo: "src/components/**/*.tsx,src/app/**/*.tsx,src/app/globals.css"
 - Never nest interactive elements. For a link styled as a button, use `Button render={<Link href="..." />}>...</Button>`.
 - Every new interactive control needs an accessible name, keyboard/focus behavior, disabled/loading behavior, and an error or empty state where applicable.
 - Prefer lucide-react icons already used by the project. Keep icon-only buttons at stable dimensions and include screen-reader text or an accessible label.
-- Preserve responsive behavior at narrow and wide widths. Avoid layout shifts when labels, validation messages, or loading indicators appear.
+- Mobile-first is the default for every new or modified route and component: establish the narrow layout first, then enhance at `sm`, `md`, and `lg` breakpoints only when needed.
+- Preserve responsive behavior across phone, tablet, and desktop widths. Check long labels, wrapped content, horizontal overflow, touch target sizing, and layout shifts when validation or loading states appear.
+- Prefer fluid widths, `min-w-0`, wrapping, responsive padding, and stable grid/flex constraints over fixed desktop dimensions. Any intentional horizontal scroll must be explicit and accessible.
 - Keep component ownership clear: shared primitives in `components/ui`, domain behavior in feature folders, route composition in `app`.
 - Do not add decorative cards, broad gradients, or a new visual system for a functional task. Match the existing product language unless the request explicitly calls for redesign.
