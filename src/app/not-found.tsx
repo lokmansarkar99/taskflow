@@ -20,14 +20,16 @@ export default function NotFound() {
         Lost in the void
       </h2>
       <p className="mb-8 max-w-[500px] text-lg text-muted-foreground">
-        We couldn't find the page you were looking for. It might have been moved, deleted, or perhaps it never existed.
+        We couldn&apos;t find the page you were looking for. It might have been moved, deleted, or perhaps it never existed.
       </p>
       
-      <Link href="/">
-        <Button size="lg" className="h-12 px-8 text-base font-medium rounded-full">
-          Return Home
-        </Button>
-      </Link>
+      <Button
+        size="lg"
+        className="h-12 rounded-full px-8 text-base font-medium"
+        render={<Link href="/" />}
+      >
+        Return Home
+      </Button>
     </div>
   );
 }
