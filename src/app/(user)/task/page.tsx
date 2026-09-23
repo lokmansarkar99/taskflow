@@ -1,4 +1,3 @@
-import fetcher from "@/lib/api";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -27,7 +26,8 @@ type TodoResponse = {
 
 export default async function TaskPage() {
   // 2. Fetch the data with the correct type
-  const taskData = await fetcher<TodoResponse>("todos?limit=10");
+  const response = await fetch("https://dummyjson.com/todos");
+  const taskData: TodoResponse = await response.json();
 
   return (
     <div className="min-h-screen max-w-5xl bg-background px-4 py-6 sm:px-6 sm:py-8 lg:mx-auto lg:px-8">
